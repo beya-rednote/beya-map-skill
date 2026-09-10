@@ -54,15 +54,15 @@ Place the footer along the bottom edge with comfortable margin. It must not comp
 
 ### 1. World Location Map
 
-Show the whole world. Highlight the target country in yellow. Keep continents, oceans, and sparse large-country labels readable.
+Show the whole world. Title format is `[ZH_COUNTRY] - 世界地图`. Highlight the target country in yellow. Keep continents, oceans, and sparse large-country labels readable.
 
 ### 2. Country Travel Region Map
 
-Show the target country at larger scale. Divide it into official, government tourism, or widely accepted travel regions. Use distinct low-saturation colors, numbered callouts if useful, and short travel-planning notes.
+Show the target country at larger scale. Title format is `[ZH_COUNTRY] - [REGION_COUNT]大旅行区域地图`. Divide it into official, government tourism, or widely accepted travel regions. Use distinct low-saturation colors, numbered callouts if useful, and short travel-planning notes. When space allows, add a bottom detail strip or region cards like the demos.
 
 ### 3. Region Or City Travel Map
 
-Show the selected region/city at practical travel scale. Include key landmarks, transport points, attraction clusters, routes, coastline/water, district names, and a few hand-drawn icons. Keep it useful but airy.
+Show the selected region/city at practical travel scale. Title format is `[ZH_COUNTRY] - [ZH_AREA]旅行地图`. Include key landmarks, transport points, attraction clusters, routes, coastline/water, district names, and a few hand-drawn icons. Keep it useful but airy. For itineraries, use hand-drawn route lines and compact day/detail cards like the demos.
 
 ## Prompt Template: Full Three-Image Set
 
@@ -71,11 +71,11 @@ Replace bracketed values:
 ```text
 Create a consistent three-image Beya travel map set for [ZH_COUNTRY] / [EN_COUNTRY], in the same visual style across all images. Use Beya illustration Style 1 Quiet Geometry Poster as the base: cream textured paper, refined muted palette, handmade dry-pigment/watercolor texture, simplified but recognizable map forms, thin olive-gray hand-traced lines, airy editorial spacing, original loose Chinese handwritten labels, not a technical atlas and not flat vector clipart.
 
-Image 1 title: “世界地图 - [ZH_COUNTRY]”. Landscape 4:3 world location map. Soft irregular blue watercolor ocean wash, pale yellow-green land, highlight the entire [EN_COUNTRY] territory in warm bright yellow. Label seven continents in Chinese: 北美洲, 南美洲, 欧洲, 非洲, 亚洲, 大洋洲, 南极洲. Label four oceans in blue Chinese handwriting: 太平洋, 大西洋, 印度洋, 北冰洋. Add sparse major country names in Chinese: 加拿大, 美国, 巴西, 俄罗斯, 中国, 印度, 日本, 韩国, 澳大利亚. Add a small yellow callout label pointing to [EN_COUNTRY] reading “[ZH_COUNTRY]”.
+Image 1 title: “[ZH_COUNTRY] - 世界地图”. Portrait 3:4 world location map. Soft irregular blue watercolor ocean wash, pale yellow-green land, highlight the entire [EN_COUNTRY] territory in warm bright yellow. Label seven continents in Chinese: 北美洲, 南美洲, 欧洲, 非洲, 亚洲, 大洋洲, 南极洲. Label four oceans in blue Chinese handwriting: 太平洋, 大西洋, 印度洋, 北冰洋. Add sparse major country names in Chinese: 加拿大, 美国, 巴西, 俄罗斯, 中国, 印度, 日本, 韩国, 澳大利亚. Add a small yellow callout label pointing to [EN_COUNTRY] reading “[ZH_COUNTRY]”.
 
-Image 2 title: “[ZH_COUNTRY]旅行区域地图”. Landscape 4:3 country travel-region map. Show [EN_COUNTRY] at country scale and divide it into official/government tourism or widely accepted travel regions. Use low-saturation region colors, handwritten region labels, optional numbered callouts, and concise travel-planning notes. Keep the country shape recognizable and useful for trip planning.
+Image 2 title: “[ZH_COUNTRY] - [REGION_COUNT]大旅行区域地图”. Portrait 3:4 country travel-region map. Show [EN_COUNTRY] at country scale and divide it into official/government tourism or widely accepted travel regions. Use low-saturation region colors, handwritten region labels, optional numbered callouts, and concise travel-planning notes. Keep the country shape recognizable and useful for trip planning.
 
-Image 3 title: “[ZH_AREA]旅行地图”. Travel map for [ZH_AREA] / [EN_AREA] inside [ZH_COUNTRY]. Show practical travel geography: districts or area clusters, coast/water if relevant, main routes, transport gateways, key attractions, viewpoints, food/market areas, and a few simple hand-drawn icons. Highlight the selected area/core in warm yellow and keep nearby context pale.
+Image 3 title: “[ZH_COUNTRY] - [ZH_AREA]旅行地图”. Portrait 3:4 travel map for [ZH_AREA] / [EN_AREA] inside [ZH_COUNTRY]. Show practical travel geography: districts or area clusters, coast/water if relevant, main routes, transport gateways, key attractions, viewpoints, food/market areas, and a few simple hand-drawn icons. Highlight the selected area/core in warm yellow and keep nearby context pale.
 
 Each image must include a subtle bottom footer: the map name, a small hand-drawn tooth logo, and “by beya”. Keep all text readable, sparse, and handwritten. No heavy grid, no rounded map panel, no thick black outlines, no GIS look, no classroom atlas look, no infographic cards, no geometric sticker blobs, no imitation of any specific artist.
 ```
