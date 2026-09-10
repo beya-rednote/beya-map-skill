@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beya 世界地图"
+  short_description: "生成固定风格的国家高亮世界地图"
+  default_prompt: "Use $beya-world-map to draw 世界地图 - 泰国 with Thailand highlighted in yellow."
