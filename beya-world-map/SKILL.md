@@ -9,9 +9,9 @@ description: "Generate a fixed three-image Beya travel map set for one country: 
 
 Use this skill for one repeatable three-image map set. For each destination country, create:
 
-1. `世界地图 - {国家名}`: show where the country is in the world and highlight the whole country in yellow.
-2. `{国家名}旅行区域地图`: show the country divided into official, government, tourism-board, or widely accepted national travel regions.
-3. `{区域/城市名}旅行地图`: show a detailed travel map for one selected region or city inside that country.
+1. `{国家名} - 世界地图`: show where the country is in the world and highlight the whole country in yellow.
+2. `{国家名} - {数字}大旅行区域地图`: show the country divided into official, government, tourism-board, or widely accepted national travel regions.
+3. `{国家名} - {区域/城市名}旅行地图`: show a detailed travel map for one selected region or city inside that country.
 
 Keep visual style consistent across all three images. Only change the destination facts, title, highlighted area, labels, and local travel details.
 
@@ -19,6 +19,7 @@ Keep visual style consistent across all three images. Only change the destinatio
 
 - Required: country name.
 - Required for image 3: target region or city. If missing, ask which specific region/city to use for the third map.
+- Required for image 2: the travel-region count, once researched or supplied. If the country has no accepted count, state the chosen practical grouping and use that number.
 - Optional: language. Default to Chinese labels, with English names only when helpful.
 - Optional: official source preference for travel-region divisions.
 
@@ -32,9 +33,11 @@ Follow `references/world-highlight-style.md` for the locked Beya style. Use Beya
 - Combine Style 1 with the supplied map demos: cream paper, watercolor or dry-pigment wash, soft blue water, pale yellow-green land, thin hand-traced borders, handwritten Chinese labels, and one clear warm-yellow focus.
 - Do not imitate a named artist. Build an original Beya hand-drawn map language.
 
+Default canvas is portrait 3:4 for all three maps, matching the user's demos. Use another aspect ratio only when the user explicitly requests it.
+
 Every image must include a footer mark at the bottom:
 
-- Map name, for example `世界地图 - 印度尼西亚`.
+- Map name, matching the image title or a very short map-name variant.
 - A small tooth logo mark beside or near the map name.
 - `by beya` as a small handwritten signature.
 
@@ -42,8 +45,8 @@ The footer should be subtle, clean, and consistent across the three images.
 
 ## Image 1: World Location Map
 
-- Canvas: landscape 4:3.
-- Title: `世界地图 - {国家名}` centered at the top.
+- Canvas: portrait 3:4.
+- Title: `{国家名} - 世界地图` centered at the top.
 - Background: warm cream paper.
 - Ocean: soft irregular watercolor blue wash, no hard rectangular panel.
 - Other land: pale yellow-green watercolor fill.
@@ -55,8 +58,8 @@ The footer should be subtle, clean, and consistent across the three images.
 
 ## Image 2: Country Travel Region Map
 
-- Canvas: landscape 4:3 unless the user asks otherwise.
-- Title: `{国家名}旅行区域地图`.
+- Canvas: portrait 3:4 unless the user asks otherwise.
+- Title: `{国家名} - {数字}大旅行区域地图`, for example `印尼 - 7大旅行区域地图`.
 - Use the country's official, government tourism, or widely accepted travel-region divisions. If uncertain or time-sensitive, verify before finalizing.
 - Keep the full country shape geographically recognizable.
 - Divide regions with distinct low-saturation colors from the Beya palette.
@@ -66,8 +69,8 @@ The footer should be subtle, clean, and consistent across the three images.
 
 ## Image 3: Region Or City Travel Map
 
-- Canvas: choose landscape 4:3 by default, or portrait 3:4 if the city/route shape fits better.
-- Title: `{区域/城市名}旅行地图`.
+- Canvas: portrait 3:4 unless the user asks otherwise.
+- Title: `{国家名} - {区域/城市名}旅行地图`, for example `印尼 - 科莫多旅行地图`.
 - Show practical travel geography: districts, coastline, main roads or route arrows, airports/stations/ports, key attractions, food/market areas, viewpoints, beaches, temples, museums, and day-trip clusters.
 - Use a small set of hand-drawn icons only when they help scan the map.
 - Keep labels sparse and readable. Do not turn the map into a dense guidebook page unless the user asks for a detailed poster.
@@ -82,7 +85,7 @@ The footer should be subtle, clean, and consistent across the three images.
 
 ```bash
 python3 scripts/build_map_set_prompts.py 印度尼西亚 --area 巴厘岛
-python3 scripts/build_map_set_prompts.py Thailand --zh-country 泰国 --area 曼谷
+python3 scripts/build_map_set_prompts.py Thailand --zh-country 泰国 --area 曼谷 --region-count 5
 ```
 
 5. Generate the images as bitmap illustrations, not programmatic GIS-looking maps, unless the user explicitly asks for SVG/vector.
