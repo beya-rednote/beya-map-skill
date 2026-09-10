@@ -4,9 +4,9 @@
 
 输入一个国家和一个具体区域/城市，就生成三张统一风格的地图：
 
-1. `世界地图 - 国家名`: 该国家在世界上的位置，目标国家高亮。
-2. `国家名旅行区域地图`: 该国家的官方/常用旅行区域划分。
-3. `区域或城市名旅行地图`: 某个区域或城市的具体旅行地图。
+1. `国家名 - 世界地图`: 该国家在世界上的位置，目标国家高亮。
+2. `国家名 - 几大旅行区域地图`: 该国家的官方/常用旅行区域划分。
+3. `国家名 - 具体区域旅行地图`: 某个区域或城市的具体旅行地图。
 
 示例：
 
@@ -16,7 +16,7 @@
 
 ## 固定风格
 
-- 横版 4:3 为主
+- 竖版 3:4 为主
 - 米白纸底
 - 蓝色水彩海洋
 - 浅黄绿色陆地
@@ -64,7 +64,7 @@ $beya-world-map 日本 -- 第三张画东京
 
 ```bash
 python3 beya-world-map/scripts/build_map_set_prompts.py 印度尼西亚 --area 巴厘岛
-python3 beya-world-map/scripts/build_map_set_prompts.py Thailand --zh-country 泰国 --area 曼谷
+python3 beya-world-map/scripts/build_map_set_prompts.py Thailand --zh-country 泰国 --area 曼谷 --region-count 5
 ```
 
 ## 文件
