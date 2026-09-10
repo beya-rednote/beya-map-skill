@@ -1,29 +1,32 @@
-# World Highlight Style
+# Beya Three-Map Travel Style
 
 ## Locked Visual Direction
 
-The output must resemble a soft watercolor hand-drawn travel notebook world map:
+The output must resemble a soft Beya travel-notebook map series, using the Beya illustration skill's Style 1 as the base:
 
 - Cream textured paper background.
-- Soft blue watercolor ocean wash with irregular feathered edges.
-- Pale yellow-green continents with subtle watercolor variation.
-- Thin olive-gray coastlines and country borders.
-- One target country highlighted in warm bright yellow.
-- Sparse Chinese handwriting labels, airy spacing, light and human.
-- Title centered above the map: `世界地图 - {国家名}`.
+- Quiet Geometry Poster restraint: clean editorial composition, simplified recognizable forms, muted premium palette, large breathable space.
+- Soft blue watercolor or dry-pigment wash for ocean/water.
+- Pale yellow-green land with subtle paper-print variation.
+- Warm bright yellow for the main highlighted country/region/city.
+- Thin olive-gray hand-traced coastlines, borders, roads, and callout lines.
+- Sparse handwritten Chinese labels, airy spacing, light and human.
+- Consistent footer on every image: map name + small tooth logo + `by beya`.
 
-This skill is a fixed template. Across maps, keep composition, palette, label set, and visual language consistent. Only change the title country, highlighted country, and callout location.
+The style should feel like the user's demo maps: clear travel information on handmade paper, not a technical atlas.
 
 ## Locked Palette
 
 - Paper: warm cream, around `#F7F0DD`.
-- Ocean: soft watercolor blue, around `#9DDBEB`, with slightly deeper blue labels.
+- Ocean/water: soft watercolor blue, around `#9DDBEB`.
+- Ocean text: deeper blue, around `#2F66B3`.
 - Other land: pale yellow-green, around `#D4E57A`.
-- Target country: warm yellow, around `#F5D32E`.
+- Highlight: warm yellow, around `#F5D32E`.
 - Ink: deep green-black, around `#1C362B`.
 - Border line: muted olive green, thin and semi-transparent.
+- Secondary region colors for image 2: muted teal, sage green, soft blue, lavender, terracotta, dusty pink, soft yellow.
 
-Avoid saturated poster colors, flat vector fills, neon yellow, and heavy black outlines.
+Avoid saturated poster colors, neon yellow, glossy gradients, heavy black outlines, and flat vector fills.
 
 ## Typography
 
@@ -32,25 +35,59 @@ Use original Beya handwriting:
 - Chinese title: loose, elegant, hand-written, dark green-black, not bold UI text.
 - Map labels: lighter handwritten Chinese, readable but not typeset.
 - Ocean labels: blue handwritten Chinese.
-- Country labels: small handwritten Chinese.
+- Country/region/city labels: small handwritten Chinese.
+- English place names: optional, smaller, compact, only when useful.
 
-If the image model struggles with text, still request correct text explicitly and regenerate rather than accepting missing continent/ocean labels.
+If an image model struggles with exact Chinese text, regenerate or simplify labels rather than accepting chaotic text.
 
-## Prompt Template
+## Footer Mark
 
-Use this exact structure and replace bracketed values:
+Every generated image must include a bottom footer mark:
+
+- Map name in handwritten Chinese.
+- A small tooth logo mark. Make it a simple hand-drawn tooth outline, cream/white fill, thin dark green-black line, tiny enough to be a brand mark rather than decoration.
+- `by beya` in a small handwritten signature style.
+
+Place the footer along the bottom edge with comfortable margin. It must not compete with the map.
+
+## Image-Specific Guidance
+
+### 1. World Location Map
+
+Show the whole world. Highlight the target country in yellow. Keep continents, oceans, and sparse large-country labels readable.
+
+### 2. Country Travel Region Map
+
+Show the target country at larger scale. Divide it into official, government tourism, or widely accepted travel regions. Use distinct low-saturation colors, numbered callouts if useful, and short travel-planning notes.
+
+### 3. Region Or City Travel Map
+
+Show the selected region/city at practical travel scale. Include key landmarks, transport points, attraction clusters, routes, coastline/water, district names, and a few hand-drawn icons. Keep it useful but airy.
+
+## Prompt Template: Full Three-Image Set
+
+Replace bracketed values:
 
 ```text
-A polished original Beya-style hand-drawn watercolor world map, landscape 4:3. Cream textured paper background, soft irregular blue watercolor ocean wash with feathered edges, pale yellow-green land masses with geographically recognizable world outlines, delicate thin hand-traced coastlines and country borders. Title centered at the top in original loose Chinese handwritten lettering: “世界地图 - [ZH_COUNTRY]”. Highlight the entire [EN_COUNTRY] territory in warm bright yellow watercolor while all other land remains pale yellow-green and oceans remain soft blue. Add one small yellow callout label pointing to [EN_COUNTRY] reading “[ZH_COUNTRY]”. Label all seven continents in Chinese handwriting: 北美洲, 南美洲, 欧洲, 非洲, 亚洲, 大洋洲, 南极洲. Label the four oceans in blue Chinese handwriting: 太平洋, 大西洋, 印度洋, 北冰洋. Add sparse larger country names in Chinese handwriting: 加拿大, 美国, 巴西, 俄罗斯, 中国, 印度, 日本, 韩国, 澳大利亚. Clean airy travel-notebook composition, refined watercolor texture, gentle hand-drawn map style, readable labels, no heavy grid, no rounded map panel, no thick black outlines, no GIS look, no classroom atlas look, no infographic cards, no geometric sticker blobs, not imitating any specific artist.
+Create a consistent three-image Beya travel map set for [ZH_COUNTRY] / [EN_COUNTRY], in the same visual style across all images. Use Beya illustration Style 1 Quiet Geometry Poster as the base: cream textured paper, refined muted palette, handmade dry-pigment/watercolor texture, simplified but recognizable map forms, thin olive-gray hand-traced lines, airy editorial spacing, original loose Chinese handwritten labels, not a technical atlas and not flat vector clipart.
+
+Image 1 title: “世界地图 - [ZH_COUNTRY]”. Landscape 4:3 world location map. Soft irregular blue watercolor ocean wash, pale yellow-green land, highlight the entire [EN_COUNTRY] territory in warm bright yellow. Label seven continents in Chinese: 北美洲, 南美洲, 欧洲, 非洲, 亚洲, 大洋洲, 南极洲. Label four oceans in blue Chinese handwriting: 太平洋, 大西洋, 印度洋, 北冰洋. Add sparse major country names in Chinese: 加拿大, 美国, 巴西, 俄罗斯, 中国, 印度, 日本, 韩国, 澳大利亚. Add a small yellow callout label pointing to [EN_COUNTRY] reading “[ZH_COUNTRY]”.
+
+Image 2 title: “[ZH_COUNTRY]旅行区域地图”. Landscape 4:3 country travel-region map. Show [EN_COUNTRY] at country scale and divide it into official/government tourism or widely accepted travel regions. Use low-saturation region colors, handwritten region labels, optional numbered callouts, and concise travel-planning notes. Keep the country shape recognizable and useful for trip planning.
+
+Image 3 title: “[ZH_AREA]旅行地图”. Travel map for [ZH_AREA] / [EN_AREA] inside [ZH_COUNTRY]. Show practical travel geography: districts or area clusters, coast/water if relevant, main routes, transport gateways, key attractions, viewpoints, food/market areas, and a few simple hand-drawn icons. Highlight the selected area/core in warm yellow and keep nearby context pale.
+
+Each image must include a subtle bottom footer: the map name, a small hand-drawn tooth logo, and “by beya”. Keep all text readable, sparse, and handwritten. No heavy grid, no rounded map panel, no thick black outlines, no GIS look, no classroom atlas look, no infographic cards, no geometric sticker blobs, no imitation of any specific artist.
 ```
 
 ## Quality Bar
 
 Reject and retry when:
 
-- The country is not highlighted yellow.
-- The wrong country is highlighted.
-- The title is missing or uses the wrong country.
-- The map becomes a flat vector atlas.
-- Continents or oceans are missing.
-- Text is chaotic or illegible enough to defeat the purpose.
+- The output is not three images or does not clearly separate the three map purposes.
+- A title is missing or uses the wrong country/area.
+- The wrong country/region/city is highlighted yellow.
+- The second map invents official travel regions without verification.
+- The third map lacks practical travel detail.
+- Any image misses the footer map name, tooth logo, or `by beya`.
+- The style becomes a GIS map, classroom atlas, vector infographic, or crude polygon diagram.
