@@ -1,4 +1,4 @@
 interface:
-  display_name: "Beya 世界地图"
-  short_description: "生成固定风格的国家高亮世界地图"
-  default_prompt: "Use $beya-world-map to draw 世界地图 - 泰国 with Thailand highlighted in yellow."
+  display_name: "Beya 三图旅行地图"
+  short_description: "生成世界位置、旅行区域和城市地图三图组"
+  default_prompt: "Use $beya-world-map to create a three-image travel map set for 印度尼西亚, with 巴厘岛 as the detailed area map."
