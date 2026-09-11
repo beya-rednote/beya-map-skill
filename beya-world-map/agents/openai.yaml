@@ -1,4 +1,4 @@
 interface:
   display_name: "Beya 三图旅行地图"
-  short_description: "生成世界位置、旅行区域和城市地图三图组"
-  default_prompt: "Use $beya-world-map to create a three-image travel map set for 印度尼西亚, with 巴厘岛 as the detailed area map."
+  short_description: "生成世界地图、几大旅行区域地图和具体区域旅行地图"
+  default_prompt: "Use $beya-world-map to create three Beya-style travel maps for 印尼: 印尼 - 世界地图, 印尼 - 7大旅行区域地图, and 印尼 - 科莫多旅行地图."
